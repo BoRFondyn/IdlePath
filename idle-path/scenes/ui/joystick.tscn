@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dn8f7xrt1dseb"]
+
+[node name="VirtualJoystick" type="VirtualJoystick" unique_id=1234609768]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+joystick_mode = 1
+joystick_size = 80.0
+tip_size = 35.0
+deadzone_ratio = 0.2
+visibility_mode = 1
