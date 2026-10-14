@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bsftpycftfiob"]
+
+[ext_resource type="Theme" uid="uid://chmni0tnh4y7q" path="res://scenes/ui/tools_ui_theme.tres" id="1_2yiqu"]
+
+[node name="ToolsPanel" type="PanelContainer" unique_id=2077726927]
+offset_right = 46.0
+offset_bottom = 46.0
+mouse_filter = 2
+theme = ExtResource("1_2yiqu")
+theme_type_variation = &"LightPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=234363242]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=751335526]
+layout_mode = 2
+
+[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer" unique_id=155372680]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
