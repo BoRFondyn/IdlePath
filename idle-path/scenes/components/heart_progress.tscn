@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ihnnuxkx821m"]
+
+[ext_resource type="Script" uid="uid://oj8wga6uhd3w" path="res://heart_progress.gd" id="1_yqe21"]
+
+[node name="HeartProgress" type="ProgressBar" unique_id=387287759]
+offset_right = 40.0
+offset_bottom = 10.0
+show_percentage = false
+script = ExtResource("1_yqe21")
+
+[node name="HeartProgressTextureProgressBar" type="TextureProgressBar" parent="." unique_id=1670506132]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

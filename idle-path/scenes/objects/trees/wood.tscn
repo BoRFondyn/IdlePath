@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ctct8ebeqrch2"]
+
+[ext_resource type="Texture2D" uid="uid://diocluqn8y1fw" path="res://assets/game/objects/trees.png" id="1_wypbv"]
+[ext_resource type="PackedScene" uid="uid://bejiuw7gr6qi3" path="res://scenes/components/collectable_component.tscn" id="2_yurcs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcuvv"]
+atlas = ExtResource("1_wypbv")
+region = Rect2(260, 158, 24, 19)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yurcs"]
+radius = 7.0
+
+[node name="Wood" type="Sprite2D" unique_id=1408607191]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_xcuvv")
+
+[node name="CollectableComponent" parent="." unique_id=920314812 instance=ExtResource("2_yurcs")]
+collectable_name = "wood"
+
+[node name="CollectableComponentCollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=1006742278]
+shape = SubResource("CircleShape2D_yurcs")
+debug_color = Color(0, 0.65081656, 0.043785132, 0.41960785)

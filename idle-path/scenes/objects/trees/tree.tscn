@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://doyd2uvy3f16p"]
+
+[ext_resource type="Shader" uid="uid://dwroalgt5q0u1" path="res://scenes/objects/trees/tree_shakes.gdshader" id="1_m3r6k"]
+[ext_resource type="Texture2D" uid="uid://cv7hq2v0k8b2g" path="res://assets/game/objects/Treess.png" id="2_3c4uq"]
+[ext_resource type="Script" uid="uid://d2ra5vnim3ulk" path="res://scenes/objects/trees/tree.gd" id="2_p2fd6"]
+[ext_resource type="PackedScene" uid="uid://dxfg7fis7l30w" path="res://scenes/components/hurt_component.tscn" id="2_tsjaw"]
+[ext_resource type="PackedScene" uid="uid://dds0fsm51f2b0" path="res://scenes/components/damage_component.tscn" id="3_ouccj"]
+[ext_resource type="PackedScene" uid="uid://nrx3u0q1wh5h" path="res://scenes/components/interactable_component.tscn" id="6_3c4uq"]
+[ext_resource type="PackedScene" uid="uid://ihnnuxkx821m" path="res://scenes/components/heart_progress.tscn" id="7_gum2g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shaal"]
+resource_local_to_scene = true
+shader = ExtResource("1_m3r6k")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 12.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shaal"]
+atlas = ExtResource("2_3c4uq")
+region = Rect2(548, 555, 48, 122)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xhut"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xhut"]
+size = Vector2(10, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44kni"]
+radius = 18.0
+
+[node name="Tree" type="Sprite2D" unique_id=866764595]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_shaal")
+texture = SubResource("AtlasTexture_shaal")
+offset = Vector2(1, -40)
+script = ExtResource("2_p2fd6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=100466707]
+position = Vector2(1, -40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1270860478]
+position = Vector2(-1, 38)
+shape = SubResource("CircleShape2D_4xhut")
+
+[node name="HurtComponent" parent="." unique_id=1193086514 instance=ExtResource("2_tsjaw")]
+position = Vector2(1, -40)
+tool = 1
+
+[node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=970186648]
+position = Vector2(-1, 33)
+shape = SubResource("RectangleShape2D_4xhut")
+debug_color = Color(0.47061676, 0.45071155, 0.97887534, 0.41960785)
+
+[node name="DamageComponent" parent="." unique_id=767852696 instance=ExtResource("3_ouccj")]
+max_damage = 3
+
+[node name="InteractableComponent" parent="." unique_id=1115676744 instance=ExtResource("6_3c4uq")]
+position = Vector2(1, -41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=2017042777]
+position = Vector2(-1, 41)
+shape = SubResource("CircleShape2D_44kni")
+debug_color = Color(0.73115546, 0.47304183, 1.1551381e-06, 0.41960785)
+
+[node name="HeartProgress" parent="." unique_id=387287759 instance=ExtResource("7_gum2g")]
+offset_top = -96.0
+offset_bottom = -86.0
